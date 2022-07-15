@@ -1,0 +1,6 @@
+CREATE DEFINER = root@ localhostTRIGGER tr_upd_deptAFTER UPDATE
+ON empFOR EACH ROW //Create trigger BEGIN update dept set sumsalary=(select
+sum(sal) from emp where deptno=new.deptno) where deptno=new.deptno;
+//When the value of deptno = When the deptno of the modified value is calculated, the queried sal is calculated. Assign the result to summary.
+
+END update emp set sal=3000 where empno=3;
